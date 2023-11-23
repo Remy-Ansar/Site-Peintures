@@ -1,0 +1,157 @@
+/* Propriétés html & body */
+
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: PlayfairDisplay;
+    src: url(/Playfair_Display/);
+}
+
+h2 {
+    font-family: PlayfairDisplay;
+    display: flex;
+    justify-content: center;
+}
+
+html {
+    font-size: 20px;
+    height: 100%;
+}
+
+body {
+    /* Propriétés grid du site */
+    background-color: black;
+    font-family: PlayfairDisplay;
+    box-sizing: border-box;
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr 0.5fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 5px 5px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "header header header header header aside"
+        "aside2 main main main main aside"
+        "aside2 main main main main aside"
+        "aside2 main main main main aside"
+        "aside2 footer footer footer footer footer";
+}
+
+
+/* Propriétés des composants header main aside et footer  */
+
+#aside2,
+header,
+aside,
+main,
+footer {
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    transition: 2.5s ease forwards;
+}
+
+header {
+    z-index: 1;
+    grid-area: header;
+    overflow: hidden;
+    width: 100%;
+}
+
+header img {
+    height: auto;
+    width: 100%;
+}
+
+#aside1 {
+    grid-area: aside;
+    overflow: hidden;
+
+}
+
+#aside1 img {
+    width: auto;
+    height: 100%;
+
+}
+
+main {
+    grid-area: main;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+main img {
+    width: 100%;
+    height: auto;
+    transition: transform 1s;
+}
+
+#aside2 {
+    grid-area: aside2;
+    overflow: hidden;
+    transition: 2.5s ease alternate forwards;
+}
+
+
+#aside2 img {
+    width: auto;
+    height: 100%;
+}
+
+footer {
+    grid-area: footer;
+    transition: 2.5s ease;
+    overflow: hidden;
+}
+
+footer img {
+    width: 100%;
+    height: auto;
+}
+
+/* Propriétés dynamiques  */
+
+#aside2,
+header,
+aside,
+main,
+footer:hover {
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+footer:hover {
+    transform: translateY(-200px);
+    height: 1000px;
+    z-index: 0;
+}
+
+#aside2:hover {
+    transform: translate(200px, 0px);
+    width: 1000px;
+    z-index: 1;
+}
+
+main img:hover {
+    transform: scale(1.5);
+}
+
+#aside1:hover {
+    transform: translateY(200px);
+    width: 1500px;
+}
+
+header:hover {
+    transform: translateY(100px);
+    height: 1000px;
+    transform: scale(1);
+
+}
